@@ -18,7 +18,8 @@ def welcome_statement():
 
 
 def get_player_name():
-    return input("What's your name: \n")
+    player_name = input("What's your name: \n")
+    return player_name
 
 
 def get_grid_size():
@@ -30,7 +31,6 @@ def get_grid_size():
     except ValueError as e:
         print(f"Invalid input: {e}")
         return get_grid_size()
-
 
 def main():
     welcome_statement()
