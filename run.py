@@ -3,6 +3,9 @@ import random
 
 HR_LINE = '------------------------------------------------------------\n'
 
+player_score = 0
+computer_score = 0
+
 
 def welcome_statement():
     print('\n Welcome to Bombing Battleships'.upper())
@@ -15,11 +18,24 @@ def welcome_statement():
     print('   4. Try and beat the computer')
     print('   Note: Consider the size of the grid since there are 4 ships \n')
     print(HR_LINE)
+    print(' Key: \n')
+    print('   @ = Your Ship')
+    print('   X = Space')
+    print('   * = Hit')
+    print('   O = Missed\n')
+    print(HR_LINE)
 
 
 def get_player_name():
     player_name = input("What's your name: \n")
     return player_name
+
+
+def display_score(player_name):
+    print(HR_LINE)
+    print(f"{player_name}: {player_score} Computer score: {computer_score}\n")
+    print(HR_LINE)
+    return display_score
 
 
 def get_grid_size():
@@ -32,10 +48,12 @@ def get_grid_size():
         print(f"Invalid input: {e}")
         return get_grid_size()
 
+
 def main():
     welcome_statement()
-    get_player_name()
+    player_name = get_player_name()
     get_grid_size()
+    display_score(player_name)
 
 
 main()
