@@ -1,10 +1,6 @@
 import random
 
-
-HR_LINE = '------------------------------------------------------------\n'
-
-player_score = 0
-computer_score = 0
+HR_LINE = str('-' * 50)
 
 
 def welcome_statement():
@@ -31,11 +27,9 @@ def get_player_name():
     return player_name
 
 
-def display_score(player_name):
-    print(HR_LINE)
-    print(f"{player_name}: {player_score} Computer score: {computer_score}\n")
-    print(HR_LINE)
-    return display_score
+def print_board(board):
+    for row in board:
+        print(" ".join(row))
 
 
 def get_grid_size():
@@ -49,11 +43,19 @@ def get_grid_size():
         return get_grid_size()
 
 
-def main():
+def play():
     welcome_statement()
     player_name = get_player_name()
-    get_grid_size()
-    display_score(player_name)
+    size = get_grid_size()
+
+    player_board = [["~"] * size for _ in range(size)]
+    computer_board = [["~"] * size for _ in range(size)]
+
+    print(f"\n{player_name}'s Board:\n")
+    print_board(player_board)
+    print(HR_LINE)
+    print("\nComputer's Board:\n")
+    print_board(computer_board)
 
 
-main()
+play()
