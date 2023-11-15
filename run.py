@@ -43,19 +43,46 @@ def get_grid_size():
         return get_grid_size()
 
 
+def player_guess(arg):
+    try:
+        guess_row = int(input(f"Guess Row: \n"))
+        guess_col = int(input(f"Guess Col: \n"))
+        if 0 <= guess_row <= arg and 0 <= guess_col <= arg:
+            return guess_row, guess_col
+        else:
+            print("Please enter valid coordinates.")
+            return player_guess(arg)
+    except ValueError:
+        print("Invalid input. Please enter numbers.")
+        return player_guess(arg)
+
+
+def ran_row_col(num):
+    return random.randint(0, num)
+
+
 def play():
+    # Calls the welcome statement
     welcome_statement()
+    # Calls and defines player name input
     player_name = get_player_name()
+    # Calls and defines grid size input
     size = get_grid_size()
 
+    # defines size and define grid spaces 
     player_board = [["~"] * size for _ in range(size)]
     computer_board = [["~"] * size for _ in range(size)]
 
+    # prints out player and computer boards
     print(f"\n{player_name}'s Board:\n")
     print_board(player_board)
+
     print(HR_LINE)
+
     print("\nComputer's Board:\n")
     print_board(computer_board)
 
+    
+    
 
 play()
