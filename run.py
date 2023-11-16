@@ -66,7 +66,7 @@ def player_guess(num_spaces):
 
 
 def rand_num(num):
-    return random.randint(0, num)
+    return random.randint(0, num) 
 
 
 def place_player_ships(board):
@@ -76,7 +76,7 @@ def place_player_ships(board):
         while board[ship_row][ship_col] == B_P_S:
             ship_row = rand_num(len(board) - 1)
             ship_col = rand_num(len(board) - 1)
-        board[ship_row][ship_col] = B_P_S
+        board[ship_row][ship_col] = B_P_S 
 
 
 def place_comp_ships(board):
@@ -89,7 +89,7 @@ def place_comp_ships(board):
         board[ship_row][ship_col] = B_C_S
 
 
-def play():
+def main():
     # Calls the welcome statement
     welcome_statement()
     # Calls and defines player name input
@@ -105,7 +105,6 @@ def play():
     place_player_ships(player_board)
 
     # places the ships for the comp
-    print('Computer is placing it\'s ships ......')
     place_comp_ships(computer_board)
 
     # prints out player and computer boards
@@ -142,7 +141,7 @@ def play():
             if computer_board[player_guess_row][player_guess_col] == B_M:
                 print(HR_L_S)
                 print("You already guessed that. Try again.")
-                print(HR_L_S)
+                print(HR_L_S) # runs this loop
             else:
                 print(HR_L_S)
                 print("You missed!")
@@ -160,7 +159,7 @@ def play():
         computer_guess_row = rand_num(size)
         computer_guess_col = rand_num(size)
 
-        if player_board[computer_guess_row][computer_guess_col] == B_P_S:
+        if player_board[computer_guess_row][computer_guess_col] == B_C_S:
             print(HR_L_S)
             print("Oh no! The computer sunk your battleship!")
             print(HR_L_S)
@@ -181,4 +180,4 @@ def play():
         print_board(player_board)
 
 
-play()
+main()
