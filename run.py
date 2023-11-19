@@ -3,7 +3,7 @@ import random
 # Horizontal Line Large
 HR_L = '-' * 70
 # Horizontal Line Small
-HR_L_S = '-' * 25
+HR_L_S = '-' * 35
 # Board Space (empty)
 B_S = "~"
 # Board - Player Ship
@@ -111,6 +111,10 @@ def main():
     player_board = [[B_S] * size for _ in range(size)]
     computer_board = [[B_S] * size for _ in range(size)]
 
+    # defines the player and computer score
+    player_score = 0
+    computer_score = 0
+
     # places the ships for the player
     place_player_ships(player_board)
 
@@ -147,6 +151,7 @@ def main():
             print(HR_L_S)
             print("Congratulations! You sunk the computer's battleship!")
             print(HR_L_S)
+            player_score += 1
             computer_board[player_guess_row][player_guess_col] = B_P_H
         else:
             # If player renters value they already inputed
@@ -177,8 +182,8 @@ def main():
             print(HR_L_S)
             print("Oh no! The computer sunk your battleship!")
             print(HR_L_S)
+            computer_score += 1
             player_board[computer_guess_row][computer_guess_col] = B_C_H
-
         else:
             # If the guess the same inputed value
             if player_board[computer_guess_row][computer_guess_col] == B_M:
@@ -194,6 +199,28 @@ def main():
 
         print(f"\n{player_name}'s Board:")
         print_board(player_board)
+
+    # prints the game of the game
+    # displays the amount of points
+    print(HR_L)
+    print("\nGame Over!\n".upper())
+    print(HR_L)
+    print(f"\n{player_name} Scored: {player_score} points\n")
+    print(f"Computer Scored: {computer_score} points\n")
+
+    # determines who wins the game based on points
+    if player_score > computer_score:
+        print(HR_L)
+        print(f"\nCongratulations, {player_name}! is the winner!\n".upper())
+        print(HR_L)
+    elif player_score < computer_score:
+        print(HR_L)
+        print("\nSorry, the computer wins. Better luck next time!\n")
+        print(HR_L)
+    else:
+        print(HR_L)
+        print("\nIt's a tie! Both sides played well.\n")
+        print(HR_L)
 
 
 main()
