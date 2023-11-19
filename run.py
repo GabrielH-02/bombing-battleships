@@ -52,7 +52,7 @@ def print_board(board):
 
 def get_grid_size():
     try:
-        size = int(input("\nEnter the grid size: \n"))
+        size = int(input("\nEnter a grid size (larger than 3): \n"))
         if size < 3:
             raise ValueError("Grid size must be 3 or greater.")
         return size
