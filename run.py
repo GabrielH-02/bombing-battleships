@@ -1,17 +1,25 @@
 import random
 
+# Horizontal Line Large
 HR_L = '-' * 70
+# Horizontal Line Small
 HR_L_S = '-' * 25
+# Board Space (empty)
 B_S = "~"
+# Board - Player Ship
 B_P_S = "@"
+# Board - Computer Ship
 B_C_S = "0"
+# Board - Player hits computer's ship
 B_P_H = "*"
+# Board - Computer hits player's ship
 B_C_H = "X"
+# Board - Missed hit
 B_M = "O"
 
 
 def welcome_statement():
-    print('\n Welcome to Bombing Battleships'.upper())
+    print('\n Welcome to Bombing Blasting Battleships'.upper())
     print(HR_L)
     print(' How to Play:')
     print(HR_L)
@@ -19,7 +27,9 @@ def welcome_statement():
     print('   2. Select a singular number for the size of the grid')
     print('   3. Select and guess the row, and column to bomb')
     print('   4. Try and beat the computer')
-    print('   Note: Consider the size of the grid since there are 4 ships \n')
+    print('   Note: The game has only ten rounds!')
+    print('   Note: Consider the size of the grid since there are 4 ships!')
+    print('   Note: The grid coordinates begin in the top left corner,(0, 0)')
     print(HR_L)
     print(f' Key: \n')
     print(f'   {B_P_S} = Your Ship')
@@ -31,7 +41,7 @@ def welcome_statement():
 
 
 def get_player_name():
-    player_name = input("What's your name: \n")
+    player_name = input("What's your name: \n").capitalize()
     return player_name
 
 
@@ -66,7 +76,7 @@ def player_guess(num_spaces):
 
 
 def rand_num(num):
-    return random.randint(0, num)
+    return random.randint(0, (num - 1))
 
 
 def place_player_ships(board):
@@ -132,17 +142,20 @@ def main():
         # runs the player_guess function
         player_guess_row, player_guess_col = player_guess(size)
 
+        # If the player hits a computer's ship changes 0 to *
         if computer_board[player_guess_row][player_guess_col] == B_C_S:
             print(HR_L_S)
             print("Congratulations! You sunk the computer's battleship!")
             print(HR_L_S)
             computer_board[player_guess_row][player_guess_col] = B_P_H
         else:
+            # If player renters value they already inputed
             if computer_board[player_guess_row][player_guess_col] == B_M:
                 print(HR_L_S)
                 print("You already guessed that. Try again.")
                 print(HR_L_S)
             else:
+                # If player misses it replaces ~ to O
                 print(HR_L_S)
                 print("You missed!")
                 print(HR_L_S)
@@ -159,6 +172,7 @@ def main():
         computer_guess_row = rand_num(size)
         computer_guess_col = rand_num(size)
 
+        # If the computer hits the player's ship it changes @ to X
         if player_board[computer_guess_row][computer_guess_col] == B_P_S:
             print(HR_L_S)
             print("Oh no! The computer sunk your battleship!")
@@ -166,11 +180,13 @@ def main():
             player_board[computer_guess_row][computer_guess_col] = B_C_H
 
         else:
+            # If the guess the same inputed value
             if player_board[computer_guess_row][computer_guess_col] == B_M:
                 print(HR_L_S)
                 print("Computer already guessed that. It's your lucky day.")
                 print(HR_L_S)
             else:
+                # If computer misses it replaces ~ to O
                 print(HR_L_S)
                 print("Computer missed!")
                 print(HR_L_S)
