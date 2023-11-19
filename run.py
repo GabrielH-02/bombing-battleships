@@ -61,18 +61,27 @@ def get_grid_size():
         return get_grid_size()
 
 
-def player_guess(num_spaces):
-    try:
-        guess_row = int(input(f"\nGuess Row (0 - {num_spaces - 1}): \n"))
-        guess_col = int(input(f"\nGuess Col (0 - {num_spaces - 1}): \n"))
-        if 0 <= guess_row < num_spaces and 0 <= guess_col < num_spaces:
-            return guess_row, guess_col
-        else:
-            print("Please enter valid coordinates.")
-            return player_guess(num_spaces)
-    except ValueError:
-        print("Invalid input. Please enter numbers.")
-        return player_guess(num_spaces)
+def player_guess(num_spaces, max_invalid_attempts):
+    invalid_attempts = 0
+
+    while invalid_attempts < max_invalid_attempts:
+        try:
+            guess_row = int(input(f"\nGuess Row (0 - {num_spaces - 1}): \n"))
+            guess_col = int(input(f"\nGuess Col (0 - {num_spaces - 1}): \n"))
+
+            if 0 <= guess_row < num_spaces and 0 <= guess_col < num_spaces:
+                return guess_row, guess_col
+            else:
+                print("Please enter valid coordinates.")
+                invalid_attempts += 1
+        except ValueError:
+            print("Invalid input. Please enter numbers.")
+            invalid_attempts += 1
+
+    print(HR_L)
+    print("\nToo many invalid attempts. Game over!\n".upper())
+    print(HR_L)
+    exit()
 
 
 def rand_num(num):
@@ -144,7 +153,7 @@ def main():
         print(f"\n{player_name}'s Go:")
 
         # runs the player_guess function
-        player_guess_row, player_guess_col = player_guess(size)
+        player_guess_row, player_guess_col = player_guess(size, 3)
 
         # If the player hits a computer's ship changes 0 to *
         if computer_board[player_guess_row][player_guess_col] == B_C_S:
