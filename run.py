@@ -119,6 +119,7 @@ def main():
     # defines size and define grid spaces
     player_board = [[B_S] * size for _ in range(size)]
     computer_board = [[B_S] * size for _ in range(size)]
+    hidden_board = [[B_S] * size for _ in range(size)]
 
     # defines the player and computer score
     player_score = 0
@@ -137,7 +138,7 @@ def main():
     print(HR_L)
 
     print("\nComputer's Board:\n")
-    print_board(computer_board)
+    print_board(hidden_board)
 
     # loop of the game
 
@@ -162,6 +163,7 @@ def main():
             print(HR_L_S)
             player_score += 1
             computer_board[player_guess_row][player_guess_col] = B_P_H
+            hidden_board[player_guess_row][player_guess_col] = B_P_H
         else:
             # If player renters value they already inputed
             if computer_board[player_guess_row][player_guess_col] == B_M:
@@ -174,13 +176,14 @@ def main():
                 print("You missed!")
                 print(HR_L_S)
                 computer_board[player_guess_row][player_guess_col] = B_M
+                hidden_board[player_guess_row][player_guess_col] = B_M
 
         # prints the players board
         print(f"\n{player_name}'s Board:")
         print_board(player_board)
 
         print("\nComputer Board:")
-        print_board(computer_board)
+        print_board(hidden_board)
 
         print("\nComputer's Go:")
         computer_guess_row = rand_num(size)
