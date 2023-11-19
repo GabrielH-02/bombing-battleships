@@ -66,7 +66,7 @@ def player_guess(num_spaces):
 
 
 def rand_num(num):
-    return random.randint(0, num) 
+    return random.randint(0, num)
 
 
 def place_player_ships(board):
@@ -76,7 +76,7 @@ def place_player_ships(board):
         while board[ship_row][ship_col] == B_P_S:
             ship_row = rand_num(len(board) - 1)
             ship_col = rand_num(len(board) - 1)
-        board[ship_row][ship_col] = B_P_S 
+        board[ship_row][ship_col] = B_P_S
 
 
 def place_comp_ships(board):
@@ -101,7 +101,7 @@ def main():
     player_board = [[B_S] * size for _ in range(size)]
     computer_board = [[B_S] * size for _ in range(size)]
 
-    # places the ships for the player 
+    # places the ships for the player
     place_player_ships(player_board)
 
     # places the ships for the comp
@@ -116,20 +116,20 @@ def main():
     print("\nComputer's Board:\n")
     print_board(computer_board)
 
-    # loop of the game 
+    # loop of the game
 
     rounds = 10
 
     for turn in range(rounds):
-        
+
         # prints the title of the round
         print("\n Round", turn + 1)
         print(HR_L)
-        
+
         # prints the players turn
         print(f"\n{player_name}'s Go:")
-        
-        # runs the player_guess function 
+
+        # runs the player_guess function
         player_guess_row, player_guess_col = player_guess(size)
 
         if computer_board[player_guess_row][player_guess_col] == B_C_S:
@@ -141,13 +141,13 @@ def main():
             if computer_board[player_guess_row][player_guess_col] == B_M:
                 print(HR_L_S)
                 print("You already guessed that. Try again.")
-                print(HR_L_S) # runs this loop
+                print(HR_L_S)
             else:
                 print(HR_L_S)
                 print("You missed!")
                 print(HR_L_S)
                 computer_board[player_guess_row][player_guess_col] = B_M
-        
+
         # prints the players board
         print(f"\n{player_name}'s Board:")
         print_board(player_board)
@@ -159,7 +159,7 @@ def main():
         computer_guess_row = rand_num(size)
         computer_guess_col = rand_num(size)
 
-        if player_board[computer_guess_row][computer_guess_col] == B_C_S:
+        if player_board[computer_guess_row][computer_guess_col] == B_P_S:
             print(HR_L_S)
             print("Oh no! The computer sunk your battleship!")
             print(HR_L_S)
