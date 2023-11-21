@@ -92,5 +92,13 @@ You can view my live site of Bombing Blasting Battleships [here.](https://bombin
 ## Credits
 
 ### Content
+* The code template for the site was provided by [Code Institute](https://github.com/Code-Institute-Org/p3-template)
+* The idea of the game comes from the common game of [Battleships](https://en.wikipedia.org/wiki/Battleship_(game))
+* Inspiration for the basic look and functionality was influenced by [ULTIMATE BATTLESHIPS](https://p3-battleships.herokuapp.com/)
+* The project [Love Sandwiches](https://github.com/Code-Institute-Solutions/love-sandwiches-p5-sourcecode) was a huge help in understanding the use of functions and importation into the Python file. As well as the basic structure of code.
+* The YouTube channel [Programming with Mosh](https://www.youtube.com/@programmingwithmosh/featured) and a few videos helped the process of overcoming more complex areas of the site such as placing the ships function.
+
 ### Media
+* No media files were used in the creation of this site.
+
 
