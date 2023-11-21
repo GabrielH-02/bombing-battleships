@@ -1,9 +1,7 @@
 # Bombing Blasting Battleships
----
 ![responsive-image](documentation/01-responsive-design.png)
 
 ## Features
----
 ### Existing Features
 
 ![welcome-section-image](documentation/02-welcome-statement.png)
@@ -29,19 +27,17 @@
 ### Features Left to Implement
 
 ## Languages and Resources
----
 
-* [Python](https://www.python.org/) - Language used to write the terminal-based game.
+* [Python](https://www.python.org/) - The language used to write the terminal-based game.
 * [Code Institute Template P3](https://github.com/Code-Institute-Org/p3-template) - The template used to build the site.
-* [HTML5](https://html.spec.whatwg.org/multipage/) - provided by Code Institute. 
-* [JavaScript](https://www.w3.org/TR/css-2022/)  - provided by Code Institute. 
+* [HTML5](https://html.spec.whatwg.org/multipage/) - The language provided by the Code Institute template. 
+* [JavaScript](https://www.w3.org/TR/css-2022/)  - The language provided by the Code Institute template.  
 * [GitHub](https://github.com/) - Repository for the site’s code.
-* [Codeanywhere](https://www.codecademy.com/)  - IDE used to write the code.
-* [Am I Responsive](https://ui.dev/amiresponsive) - To test the responsiveness of the page.
-* [Heroku](https://www.heroku.com/home) - To deploy the project.
+* [Codeanywhere](https://www.codecademy.com/)  - The IDE used to write the code.
+* [Am I Responsive](https://ui.dev/amiresponsive) - As site used to test the responsiveness of the page.
+* [Heroku](https://www.heroku.com/home) - To deploy the site.
 
 ## Testing
----
 
 ### Validator Testing
 ![validator-image](documentation/12-validator-check.png)
@@ -52,10 +48,8 @@
 #### Unfixed Bugs
 
 ## Deployment
----
 
 ## Credits
----
 
 ### Content
 ### Media
