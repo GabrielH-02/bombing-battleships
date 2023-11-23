@@ -1,4 +1,4 @@
-1# Bombing Blasting Battleships - Terminal-based Game
+# Bombing Blasting Battleships - Terminal-based Game
 
 ![responsive-image](documentation/01-responsive-design.png)
 This responsive page is designed for people wishing to play a simple interactive game to pass the time and can be viewed on various devices. 
