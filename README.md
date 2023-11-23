@@ -5,11 +5,11 @@ This responsive page is designed for people wishing to play a simple interactive
 
 [Here is the live version of Bombing Blasting Battleships ](https://bombing-blasting-battleships-f95b679c02b6.herokuapp.com/)
 
-### About the page
+## About the page
 
 Bombing Blasting Battleships is a Python terminal-based game, which runs in the Code Institute GitHub project three template and is deployed on Heroku. Bombing Blasting Battleships is a game based on the well-known commonly played battleships game however, instead of the board game itself the game is played on a digital format such as this page. 
 
-### Bombing Blasting Battleships Goals
+## Bombing Blasting Battleships Goals
 
 ### Site Owner’s Goals
 
@@ -26,7 +26,7 @@ The overall game structure is a welcome statement, followed by a ‘how to play�
 
 ### Existing Features
 
-### Welcome Section
+#### Welcome Section
 
 Within the welcome section, there are four features, the title, how to play, the key, and the initial inputs.
 
@@ -42,13 +42,13 @@ Another note to add is that the grid value input has built-in value errors, ther
 ![initial-inputs-image](documentation/03-initial-inputs.png)
 
 
-### Initial Boards
+#### Initial Boards
 
 Once the grid value of input has been filled in correctly the game produces the initial boards; the user's board and the computer's board. Again with the use of the inputted name, the board becomes personalized. Another feature here is that the game randomly picks places on the grid and displays the user's four ships with a ‘@’ symbol that allows the user to clearly identify where their ships are located. In future features perhaps the user could place their ships themselves (more in features to implement). There is a horizon dashed line dividing the two boards this also adds to the user experience of clearly identifying which board is their own and which is the computer's. The computer's board is left clear as it should be, as this would take the objective of the game away.
 
 ![initial-boards-image](documentation/04-initial-boards.png)
 
-### Rounds
+#### Rounds
 
 Along with the initial boards, the first round is printed into the game. In the round section, there are multiple features all with their own purpose. The first is the user's turn/go, correctly labeled with the name of the user just like the board, it makes the game more personalized. Then there is the guess row input that allows the user to enter a guess value. With the instruction of the input field, in brackets, there are the numbers zero to four. By doing this it allows the user to identify which numbers will be considered correct, as it can be complicated due to the fact that Python starts indexing at zero, which makes it the first value. Therefore there were alterations made to the code so any desired value inserted into the grid size input field so that the values produced in the brackets will be zero to the desired number minus one. Once the valid input has been submitted it will trigger the next input field, that is the guess col field. Which takes the same principles as the first input. Like the grid size input field, these two input fields that have a similar response to invalid data. Once these inputs have been submitted the game will produce a valid response in this case it will produce ‘You missed’. It is outlined in two small dashed lines to draw the attention of the user. In this example, the response is ‘You missed!’However, there are two more responses; in the case that the user hits the computer ship it will produce the response ‘Congratulations, you sank the computer's ship’ and in the case that the user enters data which they have submitted before, the response message produced would be ‘Oh no! You guessed these values before’. This again means that the game is equipped to handle any inputted data. 
 
@@ -68,14 +68,14 @@ Another feature added to prevent an endless loop was that of invalid attempts on
 
 ![invalid-attempts-image](documentation/08-invalid-attempts.png)
 
-### End result of boards
+#### End result of boards
 
 As mentioned by the end of the game the boards will look relatively like this impacted by what the user and computer have guessed over the rounds of the game. This allows the user to have a clear visual of the game thus making the game more enjoyable. As well as adaptive to a more visual learner/ thinker. 
 
 ![board-result-01-image](documentation/09-board-result-01.png)
 ![board-result-02-image](documentation/10-board-result-02.png)
 
-### End of the Game
+#### End of the Game
 
 Once the ten rounds have been completed the board will mark the end of the game. Like the title the ‘Game Over’ wording is in all uppercase letters to draw the attention of the user to clarify the end of the game, to create a clear and informative environment. Under this the score of the computer and player will be shown with every ship hit the player and the computer receive one point, in this case, the player scored three and the computer scored one. Therefore the player wins the game and that is clearly marked underneath with a response. Again like the rest of the code, the game is equipped with a response for a lost game as well as a tie. Again this feature allows the game to be equipped with any outcome, therefore creating a perfectly organized game. 
 
